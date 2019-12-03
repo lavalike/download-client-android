@@ -1,0 +1,36 @@
+apply plugin: 'com.android.library'
+apply plugin: 'com.novoda.bintray-release'
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        consumerProguardFiles 'consumer-rules.pro'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'com.squareup.okhttp3:okhttp:3.12.6'
+}
+
+publish {
+    userOrg = 'lavalike'
+    groupId = 'com.wangzhen'
+    artifactId = 'download-client-android'
+    publishVersion = '0.0.1'
+    desc = 'A download client for android based on okhttp3.'
+    website = 'https://github.com/lavalike/download-client-android.git'
+}
