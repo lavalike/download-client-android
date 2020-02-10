@@ -4,7 +4,7 @@ apply plugin: 'com.novoda.bintray-release'
 android {
     compileSdkVersion 28
     defaultConfig {
-        minSdkVersion 21
+        minSdkVersion 17
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
@@ -30,7 +30,7 @@ publish {
     userOrg = 'lavalike'
     groupId = 'com.wangzhen'
     artifactId = 'download-client-android'
-    publishVersion = '0.0.1'
+    publishVersion = '0.0.2'
     desc = 'A download client for android based on okhttp3.'
     website = 'https://github.com/lavalike/download-client-android.git'
 }
