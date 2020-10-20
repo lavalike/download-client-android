@@ -23,7 +23,6 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 
-import static com.wangzhen.download.utils.FileUtils.getDownloadPath;
 import static com.wangzhen.download.utils.FileUtils.getNameFromUrl;
 
 /**
@@ -59,12 +58,13 @@ public final class DownloadTask extends Thread {
             onFail("fail getting a file name");
             return;
         }
-        if (TextUtils.isEmpty(dir))
-            dir = getDownloadPath();
-        //创建目录
+        if (TextUtils.isEmpty(dir)) {
+            onFail("dir is empty");
+            return;
+        }
         File dirFile = new File(dir);
         if (!dirFile.exists()) {
-            dirFile.mkdirs();
+            boolean ignore = dirFile.mkdirs();
         }
         if (url.startsWith("/")) {
             File file = new File(url);
