@@ -1,5 +1,5 @@
 # download-client-android
-> 一行代码实现全局变灰，支持指定View
+> 基于OKHttp的文件下载器
 
 [![Platform](https://img.shields.io/badge/Platform-Android-00CC00.svg?style=flat)](https://www.android.com)
 [![](https://jitpack.io/v/lavalike/download-client-android.svg)](https://jitpack.io/#lavalike/download-client-android)
@@ -21,7 +21,7 @@ allprojects {
 
 ``` gradle
 dependencies {
-	implementation 'com.github.lavalike:color-saturation:0.0.2'
+	implementation 'com.github.lavalike:download-client-android:0.0.2'
 }
 ```
 
